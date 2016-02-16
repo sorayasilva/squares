@@ -9,10 +9,17 @@ $('.galimg img').each(function(){
 	if(w > h){
 		$(this).addClass('landscape');
 		$('.landscape').css('text-align' ,'center');
+	
+	var shrink = $(this).height() / imgh;
+	var halcrop = (imgw * shrink - w) / 2;
+
+	$(this).css('left', -halfcrop +'px');
+	
 	}
 
-	if (h > w){
+	else {
 		$(this).addClass('portrait');
 	}
 	
 });
+
